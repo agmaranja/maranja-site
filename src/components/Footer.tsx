@@ -1,13 +1,26 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Leaf from "@/components/Leaf";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contato" className="bg-maranja-darkblue text-white py-12 md:py-16">
-      <div className="container mx-auto px-4">
+    <footer id="contato" className="bg-maranja-darkblue text-white py-12 md:py-16 relative">
+      <Leaf 
+        position="top-right" 
+        size={40} 
+        rotation={20} 
+        className="opacity-10 text-white" 
+      />
+      <Leaf 
+        position="bottom-left" 
+        size={32} 
+        rotation={-15} 
+        className="opacity-10 text-white" 
+      />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between pb-8 border-b border-white/20">
           <div className="mb-8 md:mb-0">
             <img 
