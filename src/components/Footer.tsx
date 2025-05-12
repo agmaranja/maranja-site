@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Leaf from "@/components/Leaf";
@@ -11,13 +12,41 @@ const Footer = () => {
         position="top-right" 
         size={40} 
         rotation={20} 
-        className="opacity-10 text-white" 
+        opacity={0.1}
+        leafType="leafy"
+        className="text-white" 
       />
       <Leaf 
         position="bottom-left" 
         size={32} 
         rotation={-15} 
-        className="opacity-10 text-white" 
+        opacity={0.1}
+        leafType="palm"
+        className="text-white" 
+      />
+      <Leaf 
+        position="center-left" 
+        size={26} 
+        rotation={45} 
+        opacity={0.08}
+        leafType="trees"
+        className="text-white hidden md:block" 
+      />
+      <Leaf 
+        position="bottom-right" 
+        size={24} 
+        rotation={10} 
+        opacity={0.12}
+        leafType="pine"
+        className="text-white hidden lg:block" 
+      />
+      <Leaf 
+        position="top-left" 
+        size={28} 
+        rotation={-25} 
+        opacity={0.1}
+        leafType="deciduous"
+        className="text-white hidden xl:block" 
       />
       
       <div className="container mx-auto px-4 relative z-10">
