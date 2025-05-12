@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import Leaf from "@/components/Leaf";
 
@@ -13,11 +12,11 @@ const Hero = () => {
       </div>
       
       {/* Decorative Leaves */}
-      <Leaf position="top-left" size={36} rotation={-15} opacity={0.2} />
-      <Leaf position="bottom-right" size={48} rotation={25} opacity={0.3} leafType="leafy" />
-      <Leaf position="center-left" size={28} rotation={45} opacity={0.15} leafType="pine" className="hidden md:block" />
-      <Leaf position="bottom-left" size={32} rotation={-22} opacity={0.2} leafType="deciduous" className="hidden lg:block" />
-      <Leaf position="center-right" size={24} rotation={18} opacity={0.25} leafType="shrub" className="hidden xl:block" />
+      <Leaf position="top-left" size={36} rotation={-15} opacity={0.2} leafType="ipe" />
+      <Leaf position="bottom-right" size={48} rotation={25} opacity={0.3} leafType="jatoba" />
+      <Leaf position="center-left" size={28} rotation={45} opacity={0.15} leafType="acai" className="hidden md:block" />
+      <Leaf position="bottom-left" size={32} rotation={-22} opacity={0.2} leafType="guarana" className="hidden lg:block" />
+      <Leaf position="center-right" size={24} rotation={18} opacity={0.25} leafType="araucaria" className="hidden xl:block" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center">
@@ -65,7 +64,7 @@ const Hero = () => {
         </div>
         
         <div className="mt-16 md:mt-24 text-center relative">
-          <Leaf position="bottom-left" size={32} rotation={-30} opacity={0.2} leafType="tent-tree" className="absolute bottom-0 left-10" />
+          <Leaf position="bottom-left" size={32} rotation={-30} opacity={0.2} leafType="ipe" className="absolute bottom-0 left-10" />
           
           <p className="text-sm uppercase tracking-wider text-maranja-darkblue/60 mb-6">
             Confiado por diversas clínicas

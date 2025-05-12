@@ -13,7 +13,7 @@ const Footer = () => {
         size={40} 
         rotation={20} 
         opacity={0.1}
-        leafType="leafy"
+        leafType="ipe"
         className="text-white" 
       />
       <Leaf 
@@ -21,7 +21,7 @@ const Footer = () => {
         size={32} 
         rotation={-15} 
         opacity={0.1}
-        leafType="palm"
+        leafType="acai"
         className="text-white" 
       />
       <Leaf 
@@ -29,7 +29,7 @@ const Footer = () => {
         size={26} 
         rotation={45} 
         opacity={0.08}
-        leafType="trees"
+        leafType="jatoba"
         className="text-white hidden md:block" 
       />
       <Leaf 
@@ -37,7 +37,7 @@ const Footer = () => {
         size={24} 
         rotation={10} 
         opacity={0.12}
-        leafType="pine"
+        leafType="guarana"
         className="text-white hidden lg:block" 
       />
       <Leaf 
@@ -45,7 +45,7 @@ const Footer = () => {
         size={28} 
         rotation={-25} 
         opacity={0.1}
-        leafType="deciduous"
+        leafType="araucaria"
         className="text-white hidden xl:block" 
       />
       

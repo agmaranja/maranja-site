@@ -12,8 +12,8 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-maranja-beige/95 backdrop-blur-sm py-4 border-b border-maranja-darkblue/10 relative">
-      <Leaf position="top-right" size={24} rotation={15} opacity={0.1} className="hidden lg:block" />
-      <Leaf position="top-left" size={20} rotation={-10} opacity={0.15} leafType="leafy" className="hidden lg:block" />
+      <Leaf position="top-right" size={24} rotation={15} opacity={0.1} leafType="ipe" className="hidden lg:block" />
+      <Leaf position="top-left" size={20} rotation={-10} opacity={0.15} leafType="jatoba" className="hidden lg:block" />
       
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
@@ -67,8 +67,8 @@ const Header = () => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-maranja-beige shadow-md py-4 px-4 border-t border-maranja-darkblue/10">
-          <Leaf position="bottom-right" size={20} rotation={-10} opacity={0.15} />
-          <Leaf position="top-left" size={16} rotation={25} opacity={0.1} leafType="shrub" />
+          <Leaf position="bottom-right" size={20} rotation={-10} opacity={0.15} leafType="acai" />
+          <Leaf position="top-left" size={16} rotation={25} opacity={0.1} leafType="guarana" />
           <nav className="flex flex-col space-y-4">
             <a 
               href="#inicio" 
