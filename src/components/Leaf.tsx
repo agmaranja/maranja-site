@@ -1,8 +1,6 @@
-import { Leaf as LeafIcon, LeafyGreen, Trees, TreeDeciduous, TreePalm, TreePine, TentTree, Shrub } from "lucide-react";
-import { cn } from "@/lib/utils";
 
-type LeafType = "standard" | "leafy" | "trees" | "deciduous" | "palm" | "pine" | "tent-tree" | "shrub" | 
-                "ipe" | "jatoba" | "acai" | "guarana" | "araucaria";
+import { Leaf as LeafIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface LeafProps {
   className?: string;
@@ -11,96 +9,57 @@ interface LeafProps {
   rotation?: number;
   opacity?: number;
   position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center-left" | "center-right";
-  leafType?: LeafType;
+  variant?: "branch-1" | "branch-2" | "branch-3" | "branch-4";
 }
 
 const Leaf = ({ 
   className, 
-  size = 24, 
+  size = 120, 
   color = "currentColor", 
   rotation = 0,
-  opacity = 0.2,
+  opacity = 0.8,
   position = "top-right",
-  leafType = "standard"
+  variant = "branch-1"
 }: LeafProps) => {
   const positionClasses = {
-    "top-left": "absolute top-4 left-4",
-    "top-right": "absolute top-4 right-4",
-    "bottom-left": "absolute bottom-4 left-4",
-    "bottom-right": "absolute bottom-4 right-4",
-    "center-left": "absolute top-1/2 -translate-y-1/2 left-4",
-    "center-right": "absolute top-1/2 -translate-y-1/2 right-4",
+    "top-left": "absolute top-0 left-0",
+    "top-right": "absolute top-0 right-0",
+    "bottom-left": "absolute bottom-0 left-0",
+    "bottom-right": "absolute bottom-0 right-0",
+    "center-left": "absolute top-1/2 -translate-y-1/2 left-0",
+    "center-right": "absolute top-1/2 -translate-y-1/2 right-0",
   };
 
-  // Custom SVG paths for Brazilian leaf types
-  const getBrazilianLeafSVG = () => {
-    switch (leafType) {
-      case "ipe":
+  const renderLeafSVG = () => {
+    switch (variant) {
+      case "branch-1":
+        // Branch with multiple leaves pointing up-left (top-left corner)
         return (
-          <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2C8 5 5 8 5 12C5 16 8 19 12 22C16 19 19 16 19 12C19 8 16 5 12 2Z" />
-            <path d="M12 6C9 8 8 9 8 12C8 15 9 16 12 18C15 16 16 15 16 12C16 9 15 8 12 6Z" />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width={size} height={size} fill="none" stroke={color} strokeWidth="1.5">
+            <path d="M15,50 C35,30 55,20 85,15 C75,25 65,30 55,32 C70,30 85,32 100,40 C85,45 70,45 55,42 C70,50 80,60 85,75 C75,70 65,60 60,50 C60,65 55,80 45,95 C40,80 40,65 45,50 C35,60 25,65 10,70 C20,60 25,50 30,40 C20,45 10,45 5,45 C10,35 15,40 15,30" fill={color} />
           </svg>
         );
-      case "jatoba":
+      case "branch-2": 
+        // Branch with leaves hanging down (top-right corner)
         return (
-          <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2C7 7 5 10 5 14C5 18 8 22 12 22C16 22 19 18 19 14C19 10 17 7 12 2Z" />
-            <path d="M12 18C13.6569 18 15 16.6569 15 15C15 13.3431 13.6569 12 12 12C10.3431 12 9 13.3431 9 15C9 16.6569 10.3431 18 12 18Z" />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width={size} height={size} fill="none" stroke={color} strokeWidth="1.5">
+            <path d="M120,10 C110,25 100,35 95,60 C95,45 100,30 110,15 C100,30 85,40 70,45 C85,35 95,25 105,15 C90,25 75,30 60,30 C75,25 90,20 105,10 C90,15 75,15 60,15 C75,10 90,5 105,5" fill={color} />
           </svg>
         );
-      case "acai":
+      case "branch-3":
+        // Branch with leaves pointing upward (bottom-left corner)
         return (
-          <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2C7 2 3 6 3 12C3 18 7 22 12 22C17 22 21 18 21 12C21 6 17 2 12 2Z" />
-            <path d="M12 6C10 6 8 8 8 12C8 16 10 18 12 18C14 18 16 16 16 12C16 8 14 6 12 6Z" />
-            <path d="M12 2L12 6" />
-            <path d="M12 18L12 22" />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width={size} height={size} fill="none" stroke={color} strokeWidth="1.5">
+            <path d="M20,120 C30,100 45,85 70,75 C55,90 45,105 40,125 C50,110 65,95 85,85 C70,100 60,115 55,130 C70,115 85,105 100,100 C85,110 75,125 70,140" fill={color} />
           </svg>
         );
-      case "guarana":
+      case "branch-4":
+        // Small branch with fewer leaves (bottom-right corner)
         return (
-          <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2L6 12L12 16L18 12L12 2Z" />
-            <path d="M12 16L12 22" />
-            <path d="M9 19L12 22L15 19" />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width={size} height={size} fill="none" stroke={color} strokeWidth="1.5">
+            <path d="M120,140 C105,130 95,115 85,95 C95,110 105,120 120,125 C110,115 100,100 95,85 C105,100 115,110 130,115 C120,105 110,95 105,80 C115,95 125,105 140,110" fill={color} />
           </svg>
         );
-      case "araucaria":
-        return (
-          <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2L8 7L4 14L12 14L20 14L16 7L12 2Z" />
-            <path d="M12 14L12 22" />
-            <path d="M9 11L12 14L15 11" />
-            <path d="M7 8L12 11L17 8" />
-          </svg>
-        );
-      default:
-        return null;
-    }
-  };
-
-  const getLeafIcon = () => {
-    // Check for Brazilian leaf types first
-    const brazilianLeaf = getBrazilianLeafSVG();
-    if (brazilianLeaf) return brazilianLeaf;
-
-    // Otherwise use standard Lucide icons
-    switch (leafType) {
-      case "leafy":
-        return <LeafyGreen size={size} color={color} />;
-      case "trees":
-        return <Trees size={size} color={color} />;
-      case "deciduous":
-        return <TreeDeciduous size={size} color={color} />;
-      case "palm":
-        return <TreePalm size={size} color={color} />;
-      case "pine":
-        return <TreePine size={size} color={color} />;
-      case "tent-tree":
-        return <TentTree size={size} color={color} />;
-      case "shrub":
-        return <Shrub size={size} color={color} />;
       default:
         return <LeafIcon size={size} color={color} />;
     }
@@ -109,7 +68,7 @@ const Leaf = ({
   return (
     <div 
       className={cn(
-        "text-maranja-darkblue transition-all duration-700",
+        "text-maranja-darkblue z-0 pointer-events-none",
         positionClasses[position],
         className
       )}
@@ -118,7 +77,7 @@ const Leaf = ({
         opacity: opacity
       }}
     >
-      {getLeafIcon()}
+      {renderLeafSVG()}
     </div>
   );
 };
