@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -5,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Phone, Mail } from "lucide-react";
-import Leaf from "@/components/Leaf";
 
 const CallMeForm = () => {
   const { toast } = useToast();
@@ -50,11 +50,6 @@ const CallMeForm = () => {
 
   return (
     <section id="ligue-para-mim" className="py-16 md:py-24 bg-gradient-to-b from-maranja-beige to-maranja-cream relative">
-      <Leaf position="top-right" size={42} rotation={15} opacity={0.2} leafType="jatoba" className="z-10" />
-      <Leaf position="bottom-left" size={36} rotation={-10} opacity={0.25} leafType="ipe" className="z-10" />
-      <Leaf position="center-right" size={28} rotation={28} opacity={0.15} leafType="araucaria" className="hidden md:block z-10" />
-      <Leaf position="top-left" size={32} rotation={-15} opacity={0.18} leafType="acai" className="hidden lg:block z-10" />
-      
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
@@ -67,9 +62,6 @@ const CallMeForm = () => {
           </div>
           
           <div className="bg-white rounded-lg shadow-md p-6 md:p-8 relative">
-            <Leaf position="top-right" size={24} rotation={30} opacity={0.15} leafType="guarana" />
-            <Leaf position="bottom-left" size={20} rotation={-20} opacity={0.12} leafType="jatoba" />
-            
             <form onSubmit={handleSubmit}>
               <div className="grid gap-6 mb-6">
                 <div className="grid gap-2">
