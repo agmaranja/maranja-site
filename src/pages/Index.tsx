@@ -9,7 +9,7 @@ import Leaf from "@/components/Leaf";
 const Index = () => {
   return (
     <div className="min-h-screen bg-maranja-beige relative overflow-hidden">
-      {/* Decorative leaves with adjusted positions and increased size */}
+      {/* Original corner leaves with adjusted positions */}
       <Leaf 
         position="top-left" 
         variant="branch-1" 
@@ -47,6 +47,42 @@ const Index = () => {
         color="#1d2d35" 
         rotation={0}
         className="right-[-30px] bottom-[-30px]"
+      />
+
+      {/* New leaf designs from uploaded images */}
+      <Leaf 
+        variant="leaf-1" 
+        size={120} 
+        opacity={0.2} 
+        color="#1d2d35" 
+        className="absolute right-[10%] top-[30%]"
+      />
+      
+      <Leaf 
+        variant="leaf-3" 
+        size={100} 
+        opacity={0.2} 
+        color="#1d2d35" 
+        rotation={-15}
+        className="absolute left-[10%] top-[40%]"
+      />
+      
+      <Leaf 
+        variant="leaf-2" 
+        size={150} 
+        opacity={0.2} 
+        color="#1d2d35" 
+        rotation={10}
+        className="absolute right-[15%] bottom-[30%]"
+      />
+      
+      <Leaf 
+        variant="leaf-4" 
+        size={120} 
+        opacity={0.2} 
+        color="#1d2d35" 
+        rotation={-5}
+        className="absolute left-[15%] bottom-[20%]"
       />
 
       <Header />
