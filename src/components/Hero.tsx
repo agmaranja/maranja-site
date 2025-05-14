@@ -1,10 +1,13 @@
+
 import { Button } from "@/components/ui/button";
-import { MessageSquare, Phone, Search, Sparkles, Star } from "lucide-react";
+import { Phone, Search, Sparkles, Star } from "lucide-react";
+
 const Hero = () => {
   const handleWhatsAppClick = () => {
-    // Replace with your actual WhatsApp number
-    window.open("https://wa.me/1234567890", "_blank");
+    // Updated WhatsApp number
+    window.open("https://wa.me/5511982404879", "_blank");
   };
+  
   return <section id="inicio" className="relative py-24 md:py-32 bg-maranja-beige overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(29,45,53,0.6),transparent)]"></div>
@@ -45,7 +48,11 @@ const Hero = () => {
               
               {/* WhatsApp Button */}
               <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white" onClick={handleWhatsAppClick}>
-                <MessageSquare className="h-4 w-4 mr-2" />
+                <img 
+                  src="/lovable-uploads/2ddcaeda-3309-4314-bc26-ca2ecb302d90.png" 
+                  alt="WhatsApp" 
+                  className="h-4 w-4 mr-2" 
+                />
                 WhatsApp
               </Button>
             </div>
@@ -66,4 +73,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
