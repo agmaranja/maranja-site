@@ -10,18 +10,26 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-maranja-beige/95 backdrop-blur-sm py-3 border-b border-maranja-darkblue/10 relative">
+    <header className="sticky top-0 z-50 bg-maranja-beige/95 backdrop-blur-sm py-4 border-b border-maranja-darkblue/10 relative">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
+          {/* Just the animal logo without text */}
           <img 
             src="/lovable-uploads/ab03f245-a6d5-422f-b497-d8921ebe72ea.png" 
-            alt="Maranjá" 
-            className="h-10 md:h-14"
+            alt="Maranjá Logo" 
+            className="h-12 md:h-14"
           />
+          {/* Separate Maranjá text with premium styling */}
+          <div className="ml-4 hidden md:block">
+            <h1 className="text-2xl font-bold text-maranja-darkblue tracking-wider">
+              MARANJÁ
+            </h1>
+            <p className="text-xs uppercase tracking-widest text-maranja-darkblue/70">Marketing Premium</p>
+          </div>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-10">
+        <nav className="hidden md:flex items-center space-x-8">
           <a href="#inicio" className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium">
             Início
           </a>
@@ -40,32 +48,38 @@ const Header = () => {
         </nav>
 
         {/* Mobile menu button */}
-        <button 
-          onClick={toggleMenu}
-          className="md:hidden text-maranja-darkblue"
-        >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            fill="none" 
-            viewBox="0 0 24 24" 
-            strokeWidth={1.5} 
-            stroke="currentColor" 
-            className="w-6 h-6"
+        <div className="flex items-center md:hidden">
+          {/* Show Maranjá text on mobile too */}
+          <div className="mr-4">
+            <h1 className="text-xl font-bold text-maranja-darkblue">MARANJÁ</h1>
+          </div>
+          <button 
+            onClick={toggleMenu}
+            className="text-maranja-darkblue"
           >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              d={isMenuOpen 
-                ? "M6 18L18 6M6 6l12 12" 
-                : "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"} 
-            />
-          </svg>
-        </button>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              strokeWidth={1.5} 
+              stroke="currentColor" 
+              className="w-6 h-6"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                d={isMenuOpen 
+                  ? "M6 18L18 6M6 6l12 12" 
+                  : "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"} 
+              />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-maranja-beige shadow-md py-4 px-4 border-t border-maranja-darkblue/10">
+        <div className="md:hidden absolute top-full left-0 w-full bg-maranja-beige shadow-md py-4 px-4 border-t border-maranja-darkblue/10 z-50">
           <nav className="flex flex-col space-y-4">
             <a 
               href="#inicio" 

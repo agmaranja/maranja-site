@@ -5,6 +5,7 @@ import Services from "@/components/Services";
 import CallMeForm from "@/components/CallMeForm";
 import Footer from "@/components/Footer";
 import Leaf from "@/components/Leaf";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -92,6 +93,7 @@ const Index = () => {
         <CallMeForm />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

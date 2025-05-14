@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { 
   Card, 
@@ -8,6 +7,7 @@ import {
   CardTitle 
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 const Services = () => {
   // Updated services list with new descriptions
@@ -49,7 +49,7 @@ const Services = () => {
       description: "Criação regular de posts (imagens, legendas e hashtags), com inteligência de engajamento e adaptação por especialidade (ex: dermato, cardio).",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
         </svg>
       )
     },
@@ -120,16 +120,16 @@ const Services = () => {
   return (
     <section id="servicos" className="py-16 md:py-24 bg-maranja-cream">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-maranja-darkblue mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-maranja-darkblue mb-6">
             Nossos Serviços
           </h2>
-          <p className="text-maranja-darkblue/70 max-w-2xl mx-auto text-lg">
+          <p className="text-maranja-darkblue/80 max-w-3xl mx-auto text-lg md:text-xl">
             Soluções completas para impulsionar sua clínica com tecnologias modernas e processos eficientes.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {servicesList.map((service) => (
             <div key={service.id} className="perspective-1000">
               <motion.div 
@@ -139,60 +139,51 @@ const Services = () => {
                 transition={{ duration: 0.6 }}
                 style={{ transformStyle: "preserve-3d" }}
               >
-                {/* Front of Card */}
+                {/* Front of Card - Only Title */}
                 <div 
                   className={`absolute w-full h-full backface-hidden ${
                     flippedCardId === service.id ? "opacity-0" : "opacity-100"
-                  } transition-opacity duration-300 rounded-lg border border-maranja-darkblue/10 bg-white/80 backdrop-blur-sm hover:shadow-md`}
+                  } transition-opacity duration-300 rounded-lg border border-maranja-darkblue/10 bg-white/90 backdrop-blur-sm hover:shadow-md`}
                   style={{ backfaceVisibility: "hidden" }}
                 >
-                  <Card className="h-full border-none shadow-none bg-transparent">
-                    <CardHeader className="pb-2">
-                      <div className="w-12 h-12 bg-maranja-beige rounded-full flex items-center justify-center mb-4 text-maranja-darkblue">
-                        {service.icon}
-                      </div>
-                      <CardTitle className="text-maranja-darkblue text-xl">{service.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-maranja-darkblue/70 text-base line-clamp-3">
-                        {service.description}
-                      </CardDescription>
-                      {service.id === 9 && (
-                        <p className="mt-3 text-sm text-maranja-darkblue font-medium">
-                          Clique para saber mais
-                        </p>
-                      )}
-                    </CardContent>
+                  <Card className="h-full border-none shadow-none bg-transparent flex flex-col items-center justify-center text-center p-6">
+                    <div className="w-16 h-16 bg-maranja-beige rounded-full flex items-center justify-center mb-6 text-maranja-darkblue">
+                      {service.icon}
+                    </div>
+                    <CardTitle className="text-maranja-darkblue text-2xl">{service.title}</CardTitle>
+                    <p className="mt-4 text-sm text-maranja-darkblue/60 font-medium">
+                      Clique para saber mais
+                    </p>
                   </Card>
                 </div>
                 
-                {/* Back of Card */}
+                {/* Back of Card - Full Description */}
                 <div 
                   className={`absolute w-full h-full backface-hidden ${
                     flippedCardId === service.id ? "opacity-100" : "opacity-0"
-                  } transition-opacity duration-300 bg-maranja-darkblue text-white rounded-lg border border-maranja-darkblue/10 flex flex-col justify-center p-6`}
+                  } transition-opacity duration-300 bg-maranja-darkblue text-white rounded-lg border border-maranja-darkblue/10 flex flex-col justify-center p-8`}
                   style={{ 
                     backfaceVisibility: "hidden",
                     transform: "rotateY(180deg)",
                   }}
                 >
-                  <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-white/90">
+                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                  <p className="text-white/90 text-lg">
                     {service.id === 9 ? (
                       <>
                         Integramos perfeitamente nossas soluções de marketing digital com os sistemas que sua clínica já utiliza:
-                        <ul className="list-disc pl-5 mt-2 space-y-1">
+                        <ul className="list-disc pl-5 mt-3 space-y-2">
                           <li>Prontuários eletrônicos (iClinic, Doctoralia, etc)</li>
                           <li>Sistemas de faturamento</li>
                           <li>Softwares de gestão médica</li>
                           <li>APIs de terceiros</li>
                         </ul>
-                        <p className="mt-3 text-sm italic">Clique para voltar</p>
                       </>
                     ) : (
                       service.description
                     )}
                   </p>
+                  <p className="mt-6 text-sm italic text-white/70">Clique para voltar</p>
                 </div>
               </motion.div>
             </div>
