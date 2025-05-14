@@ -52,41 +52,41 @@ const Index = () => {
       {/* Left side leaves */}
       <Leaf 
         variant="new-leaf-1" 
-        size={180} 
+        size={160} 
         opacity={0.12} 
         color="#1d2d35" 
-        className="absolute left-[-15px] top-[22%]"
+        className="absolute left-[-20px] top-[25%]"
       />
       
       <Leaf 
         variant="new-leaf-3" 
-        size={160} 
+        size={140} 
         opacity={0.12} 
         color="#1d2d35" 
-        className="absolute left-[-15px] top-[62%]"
+        className="absolute left-[-20px] top-[65%]"
       />
 
       {/* Right side leaves */}
       <Leaf 
         variant="new-leaf-2" 
-        size={180} 
-        opacity={0.12} 
-        color="#1d2d35" 
-        rotation={0}
-        className="absolute right-[-15px] top-[32%]"
-      />
-      
-      <Leaf 
-        variant="new-leaf-4" 
         size={160} 
         opacity={0.12} 
         color="#1d2d35" 
         rotation={0}
-        className="absolute right-[-15px] top-[72%]"
+        className="absolute right-[-20px] top-[35%]"
+      />
+      
+      <Leaf 
+        variant="new-leaf-4" 
+        size={140} 
+        opacity={0.12} 
+        color="#1d2d35" 
+        rotation={0}
+        className="absolute right-[-20px] top-[75%]"
       />
 
       <Header />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Services />
         <CallMeForm />
