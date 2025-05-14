@@ -6,19 +6,19 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contato" className="bg-maranja-darkblue text-white py-12 md:py-16 relative">
+    <footer id="contato" className="bg-maranja-darkblue text-white py-16 md:py-20 relative">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between pb-8 border-b border-white/20">
-          <div className="mb-8 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-between pb-10 border-b border-white/20">
+          <div className="mb-10 md:mb-0">
             <img 
               src="/lovable-uploads/df2623b6-6fdc-4547-bd83-34b9b7cb6718.png" 
               alt="Maranjá" 
-              className="h-16 mb-4 invert"
+              className="h-16 mb-6 invert"
             />
-            <p className="max-w-xs text-white/70 mb-6">
+            <p className="max-w-xs text-white/70 mb-8">
               Soluções de marketing e automação para clínicas que desejam crescer e otimizar processos.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-5">
               <a href="#" className="text-white hover:text-white/80" aria-label="Facebook">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
@@ -37,10 +37,10 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-10">
             <div>
-              <h3 className="text-lg font-semibold mb-4">Serviços</h3>
-              <ul className="space-y-2">
+              <h3 className="text-lg font-semibold mb-5">Serviços</h3>
+              <ul className="space-y-3">
                 <li><a href="#" className="text-white/70 hover:text-white">Websites</a></li>
                 <li><a href="#" className="text-white/70 hover:text-white">Automação</a></li>
                 <li><a href="#" className="text-white/70 hover:text-white">Gestão de Filas</a></li>
@@ -49,8 +49,8 @@ const Footer = () => {
             </div>
             
             <div>
-              <h3 className="text-lg font-semibold mb-4">Empresa</h3>
-              <ul className="space-y-2">
+              <h3 className="text-lg font-semibold mb-5">Empresa</h3>
+              <ul className="space-y-3">
                 <li><a href="#" className="text-white/70 hover:text-white">Sobre nós</a></li>
                 <li><a href="#" className="text-white/70 hover:text-white">Clientes</a></li>
                 <li><a href="#" className="text-white/70 hover:text-white">Depoimentos</a></li>
@@ -59,9 +59,9 @@ const Footer = () => {
             </div>
             
             <div className="col-span-2 md:col-span-1">
-              <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
-              <p className="text-white/70 mb-4">Receba novidades sobre marketing para clínicas</p>
-              <div className="flex space-x-2">
+              <h3 className="text-lg font-semibold mb-5">Newsletter</h3>
+              <p className="text-white/70 mb-5">Receba novidades sobre marketing para clínicas</p>
+              <div className="flex space-x-3">
                 <Input 
                   type="email" 
                   placeholder="Seu email" 

@@ -10,18 +10,18 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-maranja-beige/95 backdrop-blur-sm py-4 border-b border-maranja-darkblue/10 relative">
+    <header className="sticky top-0 z-50 bg-maranja-beige/95 backdrop-blur-sm py-3 border-b border-maranja-darkblue/10 relative">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           <img 
             src="/lovable-uploads/ab03f245-a6d5-422f-b497-d8921ebe72ea.png" 
             alt="Maranjá" 
-            className="h-12 md:h-16"
+            className="h-10 md:h-14"
           />
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-10">
           <a href="#inicio" className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium">
             Início
           </a>
@@ -31,7 +31,10 @@ const Header = () => {
           <a href="#contato" className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium">
             Contato
           </a>
-          <Button className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white">
+          <Button 
+            className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white"
+            onClick={() => document.getElementById("ligue-para-mim")?.scrollIntoView({behavior: "smooth"})}
+          >
             Ligue para mim
           </Button>
         </nav>

@@ -49,11 +49,11 @@ const CallMeForm = () => {
   };
 
   return (
-    <section id="ligue-para-mim" className="py-16 md:py-24 bg-gradient-to-b from-maranja-beige to-maranja-cream relative">
+    <section id="ligue-para-mim" className="py-20 md:py-28 bg-gradient-to-b from-maranja-beige to-maranja-cream relative">
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-maranja-darkblue mb-4">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-maranja-darkblue mb-5">
               Ligue para mim
             </h2>
             <p className="text-maranja-darkblue/70 max-w-xl mx-auto">
@@ -61,10 +61,10 @@ const CallMeForm = () => {
             </p>
           </div>
           
-          <div className="bg-white rounded-lg shadow-md p-6 md:p-8 relative">
+          <div className="bg-white rounded-lg shadow-md p-8 md:p-10 relative">
             <form onSubmit={handleSubmit}>
-              <div className="grid gap-6 mb-6">
-                <div className="grid gap-2">
+              <div className="grid gap-8 mb-8">
+                <div className="grid gap-3">
                   <Label htmlFor="nome" className="text-maranja-darkblue">
                     Nome
                   </Label>
@@ -79,7 +79,7 @@ const CallMeForm = () => {
                   />
                 </div>
                 
-                <div className="grid gap-2">
+                <div className="grid gap-3">
                   <Label htmlFor="telefone" className="text-maranja-darkblue">
                     Telefone
                   </Label>
@@ -95,7 +95,7 @@ const CallMeForm = () => {
                   />
                 </div>
                 
-                <div className="grid gap-2">
+                <div className="grid gap-3">
                   <Label htmlFor="email" className="text-maranja-darkblue">
                     E-mail
                   </Label>
@@ -111,7 +111,7 @@ const CallMeForm = () => {
                   />
                 </div>
                 
-                <div className="grid gap-2">
+                <div className="grid gap-3">
                   <Label htmlFor="mensagem" className="text-maranja-darkblue">
                     Mensagem (opcional)
                   </Label>
@@ -135,8 +135,8 @@ const CallMeForm = () => {
               </Button>
             </form>
             
-            <div className="mt-8 pt-6 border-t border-maranja-darkblue/10">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+            <div className="mt-10 pt-8 border-t border-maranja-darkblue/10">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                 <div className="flex items-center gap-2 text-maranja-darkblue">
                   <Phone className="h-5 w-5" />
                   <span>(00) 0000-0000</span>

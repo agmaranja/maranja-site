@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
+// Remove the unused App.css import
 const queryClient = new QueryClient();
 
 const App = () => (
