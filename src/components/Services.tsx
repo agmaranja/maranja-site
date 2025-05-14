@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { 
   Card, 
@@ -95,7 +96,7 @@ const Services = () => {
     },
     {
       id: 9,
-      title: "Integração com Prontuário e Ferramentas Existentes",
+      title: "Integração com Prontuário",
       description: "Conectamos sistemas de marketing com o software que a clínica já usa (ex: iClinic, Doctoralia, etc.) para maior eficiência.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -168,14 +169,14 @@ const Services = () => {
                   }}
                 >
                   <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-white/90 text-lg">
+                  <p className="text-white/90 text-base">
                     {service.id === 9 ? (
                       <>
-                        Integramos perfeitamente nossas soluções de marketing digital com os sistemas que sua clínica já utiliza:
-                        <ul className="list-disc pl-5 mt-3 space-y-2">
-                          <li>Prontuários eletrônicos (iClinic, Doctoralia, etc)</li>
+                        Integramos nossas soluções com:
+                        <ul className="list-disc pl-5 mt-2 space-y-1">
+                          <li>Prontuários eletrônicos</li>
                           <li>Sistemas de faturamento</li>
-                          <li>Softwares de gestão médica</li>
+                          <li>Softwares de gestão</li>
                           <li>APIs de terceiros</li>
                         </ul>
                       </>
@@ -183,11 +184,86 @@ const Services = () => {
                       service.description
                     )}
                   </p>
-                  <p className="mt-6 text-sm italic text-white/70">Clique para voltar</p>
+                  <p className="mt-4 text-sm italic text-white/70">Clique para voltar</p>
                 </div>
               </motion.div>
             </div>
           ))}
+        </div>
+
+        {/* On-Demand Automation Card */}
+        <div className="mt-16">
+          <Card className="bg-white/90 p-6 md:p-8 rounded-lg shadow-lg border border-maranja-darkblue/10 hover:shadow-xl transition-shadow">
+            <div className="cursor-pointer" onClick={() => handleCardFlip(10)}>
+              <motion.div className="card-container relative w-full" animate={{
+                rotateY: flippedCardId === 10 ? 180 : 0
+              }} transition={{
+                duration: 0.6
+              }} style={{
+                transformStyle: "preserve-3d"
+              }}>
+                {/* Front of Card */}
+                <div className={`backface-hidden ${flippedCardId === 10 ? "opacity-0" : "opacity-100"} transition-opacity duration-300`} style={{
+                  backfaceVisibility: "hidden"
+                }}>
+                  <div className="flex flex-col md:flex-row items-center">
+                    <div className="md:w-3/5 mb-6 md:mb-0 md:pr-8">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-4 text-maranja-darkblue">Automação Sob Demanda</h3>
+                      <p className="text-maranja-darkblue/80 mb-4">Nossa equipe inovadora permite solicitar soluções de automação conforme necessário. Pague apenas pelo que precisar.</p>
+                      <ul className="list-disc list-inside space-y-2 mb-6 text-maranja-darkblue/80">
+                        <li>Soluções flexíveis</li>
+                        <li>Sem compromissos longos</li>
+                        <li>Modelo pay-as-you-go</li>
+                        <li>Personalizado para sua clínica</li>
+                      </ul>
+                      <Button className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white">
+                        Saiba Mais
+                      </Button>
+                    </div>
+                    <div className="md:w-2/5">
+                      <img src="/lovable-uploads/59dfa3de-8a05-4a4b-8f09-64c53bae359a.png" alt="Automation Card" className="w-full h-auto rounded-md shadow-md" />
+                    </div>
+                  </div>
+                  <p className="mt-4 text-sm text-center text-maranja-darkblue/60 font-medium">
+                    Clique para ver benefícios detalhados
+                  </p>
+                </div>
+
+                {/* Back of Card */}
+                <div className={`absolute inset-0 backface-hidden ${flippedCardId === 10 ? "opacity-100" : "opacity-0"} transition-opacity duration-300 bg-maranja-darkblue text-white rounded-lg p-6 md:p-8`} style={{
+                  backfaceVisibility: "hidden",
+                  transform: "rotateY(180deg)"
+                }}>
+                  <h3 className="text-2xl font-bold mb-5 text-center">Benefícios da Automação Sob Demanda</h3>
+                  
+                  <div className="space-y-5">
+                    <div>
+                      <h4 className="text-xl font-semibold mb-2">Máxima Flexibilidade</h4>
+                      <p>Nossos cartões de automação funcionam como créditos pré-pagos. Use-os para qualquer necessidade: lembretes de consulta, acompanhamento de pacientes ou tarefas administrativas.</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-xl font-semibold mb-2">Solução Econômica</h4>
+                      <p>Em vez de investir em vários sistemas com taxas mensais, nosso modelo sob demanda permite pagar apenas pelos serviços que você realmente utiliza.</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-xl font-semibold mb-2">Suporte Técnico Incluído</h4>
+                      <p>Cada cartão inclui suporte técnico prioritário para garantir que suas automações funcionem perfeitamente.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 text-center">
+                    <Button variant="outline" className="border-white text-white hover:bg-white/20">
+                      Solicitar Demonstração
+                    </Button>
+                  </div>
+                  
+                  <p className="mt-4 text-sm italic text-center text-white/70">Clique para voltar</p>
+                </div>
+              </motion.div>
+            </div>
+          </Card>
         </div>
       </div>
     </section>
