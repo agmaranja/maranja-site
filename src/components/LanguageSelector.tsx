@@ -10,18 +10,18 @@ import {
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
-type Language = "pt-BR" | "en-GB";
+type Language = "pt-BR" | "en-US";
 
 const LanguageSelector = () => {
   const navigate = useNavigate();
   const currentPath = window.location.pathname;
   const isEnglish = currentPath.includes("/en");
-  const [currentLanguage, setCurrentLanguage] = useState<Language>(isEnglish ? "en-GB" : "pt-BR");
+  const [currentLanguage, setCurrentLanguage] = useState<Language>(isEnglish ? "en-US" : "pt-BR");
 
   const handleLanguageChange = (language: Language) => {
     setCurrentLanguage(language);
     
-    if (language === "en-GB" && !isEnglish) {
+    if (language === "en-US" && !isEnglish) {
       navigate("/en");
     } else if (language === "pt-BR" && isEnglish) {
       navigate("/");
@@ -50,11 +50,19 @@ const LanguageSelector = () => {
               <div className="w-6 h-4 relative overflow-hidden rounded-sm">
                 <div className="absolute inset-0 bg-blue-600"></div>
                 <div className="absolute inset-0">
-                  <div className="absolute top-0 left-0 w-full h-full">
-                    <div className="absolute top-0 left-0 w-full h-[20%] bg-white"></div>
-                    <div className="absolute top-[40%] left-0 w-full h-[20%] bg-white"></div>
-                    <div className="absolute top-0 left-0 h-full w-[20%] bg-white"></div>
-                    <div className="absolute top-0 left-[40%] h-full w-[20%] bg-white"></div>
+                  {/* US Flag - White stars on blue rectangle */}
+                  <div className="absolute top-0 left-0 w-[40%] h-[50%] bg-blue-800 flex items-center justify-center">
+                    <div className="text-white text-[4px] font-bold">★★★</div>
+                  </div>
+                  {/* US Flag - Red and white stripes */}
+                  <div className="absolute top-0 left-0 w-full h-full flex flex-col">
+                    <div className="h-[14.3%] bg-red-600 ml-[40%]"></div>
+                    <div className="h-[14.3%] bg-white ml-[40%]"></div>
+                    <div className="h-[14.3%] bg-red-600"></div>
+                    <div className="h-[14.3%] bg-white"></div>
+                    <div className="h-[14.3%] bg-red-600"></div>
+                    <div className="h-[14.3%] bg-white"></div>
+                    <div className="h-[14.2%] bg-red-600"></div>
                   </div>
                 </div>
               </div>
@@ -77,15 +85,23 @@ const LanguageSelector = () => {
           </div>
           Português
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleLanguageChange("en-GB")} className="cursor-pointer">
+        <DropdownMenuItem onClick={() => handleLanguageChange("en-US")} className="cursor-pointer">
           <div className="w-6 h-4 relative overflow-hidden rounded-sm mr-2">
             <div className="absolute inset-0 bg-blue-600"></div>
             <div className="absolute inset-0">
-              <div className="absolute top-0 left-0 w-full h-full">
-                <div className="absolute top-0 left-0 w-full h-[20%] bg-white"></div>
-                <div className="absolute top-[40%] left-0 w-full h-[20%] bg-white"></div>
-                <div className="absolute top-0 left-0 h-full w-[20%] bg-white"></div>
-                <div className="absolute top-0 left-[40%] h-full w-[20%] bg-white"></div>
+              {/* US Flag - White stars on blue rectangle */}
+              <div className="absolute top-0 left-0 w-[40%] h-[50%] bg-blue-800 flex items-center justify-center">
+                <div className="text-white text-[4px] font-bold">★★★</div>
+              </div>
+              {/* US Flag - Red and white stripes */}
+              <div className="absolute top-0 left-0 w-full h-full flex flex-col">
+                <div className="h-[14.3%] bg-red-600 ml-[40%]"></div>
+                <div className="h-[14.3%] bg-white ml-[40%]"></div>
+                <div className="h-[14.3%] bg-red-600"></div>
+                <div className="h-[14.3%] bg-white"></div>
+                <div className="h-[14.3%] bg-red-600"></div>
+                <div className="h-[14.3%] bg-white"></div>
+                <div className="h-[14.2%] bg-red-600"></div>
               </div>
             </div>
           </div>
