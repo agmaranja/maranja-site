@@ -9,7 +9,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           {/* Just the animal logo without text */}
-          <img alt="Maranjá Logo" className="h-12 md:h-14" src="/lovable-uploads/e7a6b33a-11f2-4a69-a413-02eba481ece1.png" />
+          <img alt="Maranjá Logo" className="h-12 md:h-14" src="/lovable-uploads/b30ea72c-a074-4b0e-bd99-44b4f833ac99.png" />
           {/* Separate Maranjá text with premium styling */}
           <div className="ml-4 hidden md:block">
             <h1 className="text-2xl font-bold text-maranja-darkblue tracking-wider">

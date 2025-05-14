@@ -1,20 +1,12 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer id="contato" className="bg-maranja-darkblue text-white py-16 md:py-20 relative">
+  return <footer id="contato" className="bg-maranja-darkblue text-white py-16 md:py-20 relative">
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between pb-10 border-b border-white/20">
           <div className="mb-10 md:mb-0">
-            <img 
-              src="/lovable-uploads/df2623b6-6fdc-4547-bd83-34b9b7cb6718.png" 
-              alt="Maranjá" 
-              className="h-16 mb-6 invert"
-            />
+            <img src="/lovable-uploads/df2623b6-6fdc-4547-bd83-34b9b7cb6718.png" alt="Maranjá" className="h-16 mb-6 invert" />
             <p className="max-w-xs text-white/70 mb-8">
               Soluções de marketing e automação para clínicas que desejam crescer e otimizar processos.
             </p>
@@ -58,20 +50,7 @@ const Footer = () => {
               </ul>
             </div>
             
-            <div className="col-span-2 md:col-span-1">
-              <h3 className="text-lg font-semibold mb-5">Newsletter</h3>
-              <p className="text-white/70 mb-5">Receba novidades sobre marketing para clínicas</p>
-              <div className="flex space-x-3">
-                <Input 
-                  type="email" 
-                  placeholder="Seu email" 
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
-                />
-                <Button type="submit" className="bg-white text-maranja-darkblue hover:bg-white/90">
-                  Enviar
-                </Button>
-              </div>
-            </div>
+            
           </div>
         </div>
         
@@ -79,8 +58,6 @@ const Footer = () => {
           <p>&copy; {currentYear} Maranjá | Todos os direitos reservados</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

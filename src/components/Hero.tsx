@@ -25,18 +25,8 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 mb-12">
-              <div className="flex items-center">
-                <div className="h-10 w-10 rounded-full bg-maranja-darkblue/10 flex items-center justify-center mr-3">
-                  <Star className="h-5 w-5 text-maranja-darkblue" />
-                </div>
-                <p className="text-sm text-maranja-darkblue">Marketing Premium</p>
-              </div>
-              <div className="flex items-center">
-                <div className="h-10 w-10 rounded-full bg-maranja-darkblue/10 flex items-center justify-center mr-3">
-                  <Search className="h-5 w-5 text-maranja-darkblue" />
-                </div>
-                <p className="text-sm text-maranja-darkblue">SEO Otimizado</p>
-              </div>
+              
+              
             </div>
             
             <div className="flex flex-wrap gap-4">
@@ -71,18 +61,7 @@ const Hero = () => {
         <div className="mt-20 md:mt-32 relative">
           <div className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-maranja-darkblue/20 to-transparent"></div>
           
-          <div className="text-center pt-16">
-            <p className="text-sm uppercase tracking-wider text-maranja-darkblue/60 mb-10">
-              Confiado por diversas clínicas premium
-            </p>
-            
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-              {/* Premium clients section with improved styling */}
-              {[1, 2, 3, 4].map(item => <div key={item} className="h-16 w-40 bg-white/50 border border-maranja-darkblue/10 rounded-md flex items-center justify-center shadow-sm transition-all hover:shadow-md">
-                  <span className="text-maranja-darkblue/70 font-medium">Cliente Premium {item}</span>
-                </div>)}
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>;
