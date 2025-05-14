@@ -53,7 +53,7 @@ const Hero = () => {
           
           <div className="w-full md:w-1/2 flex justify-center md:justify-end">
             <div className="relative w-72 h-72 md:w-[400px] md:h-[400px]">
-              <img alt="Maranjá Logo" className="w-full h-full object-contain" src="/lovable-uploads/e92294d8-fc23-4c3e-a5a6-e91d7fd795c3.png" />
+              <img alt="Maranjá Logo" className="w-full h-full object-contain" src="/lovable-uploads/07f10dad-bc9e-467d-a676-1bfc1d5be9ea.png" />
             </div>
           </div>
         </div>
