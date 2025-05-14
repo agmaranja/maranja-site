@@ -209,7 +209,7 @@ const Services = () => {
                   <div className="flex flex-col md:flex-row items-center">
                     <div className="md:w-3/5 mb-6 md:mb-0 md:pr-8">
                       <h3 className="text-2xl md:text-3xl font-bold mb-4 text-maranja-darkblue">Automação Sob Demanda</h3>
-                      <p className="text-maranja-darkblue/80 mb-4">Nossa equipe inovadora permite solicitar soluções de automação conforme necessário. Pague apenas pelo que precisar.</p>
+                      <p className="text-maranja-darkblue/80 mb-4">Nossa equipe permite que você solicite soluções personalizadas conforme sua necessidade. Pague apenas pelo que usar.</p>
                       <ul className="list-disc list-inside space-y-2 mb-6 text-maranja-darkblue/80">
                         <li>Soluções flexíveis</li>
                         <li>Sem compromissos longos</li>
@@ -229,37 +229,37 @@ const Services = () => {
                   </p>
                 </div>
 
-                {/* Back of Card */}
+                {/* Back of Card - Simplified content to fit */}
                 <div className={`absolute inset-0 backface-hidden ${flippedCardId === 10 ? "opacity-100" : "opacity-0"} transition-opacity duration-300 bg-maranja-darkblue text-white rounded-lg p-6 md:p-8`} style={{
                   backfaceVisibility: "hidden",
                   transform: "rotateY(180deg)"
                 }}>
-                  <h3 className="text-2xl font-bold mb-5 text-center">Benefícios da Automação Sob Demanda</h3>
+                  <h3 className="text-xl font-bold mb-4 text-center">Benefícios da Automação Sob Demanda</h3>
                   
-                  <div className="space-y-5">
+                  <div className="space-y-3">
                     <div>
-                      <h4 className="text-xl font-semibold mb-2">Máxima Flexibilidade</h4>
-                      <p>Nossos cartões de automação funcionam como créditos pré-pagos. Use-os para qualquer necessidade: lembretes de consulta, acompanhamento de pacientes ou tarefas administrativas.</p>
+                      <h4 className="text-lg font-semibold mb-1">Flexibilidade</h4>
+                      <p className="text-sm">Use créditos pré-pagos para lembretes, acompanhamentos ou tarefas administrativas.</p>
                     </div>
                     
                     <div>
-                      <h4 className="text-xl font-semibold mb-2">Solução Econômica</h4>
-                      <p>Em vez de investir em vários sistemas com taxas mensais, nosso modelo sob demanda permite pagar apenas pelos serviços que você realmente utiliza.</p>
+                      <h4 className="text-lg font-semibold mb-1">Economia</h4>
+                      <p className="text-sm">Pague apenas pelos serviços que você realmente utiliza, sem taxas mensais fixas.</p>
                     </div>
                     
                     <div>
-                      <h4 className="text-xl font-semibold mb-2">Suporte Técnico Incluído</h4>
-                      <p>Cada cartão inclui suporte técnico prioritário para garantir que suas automações funcionem perfeitamente.</p>
+                      <h4 className="text-lg font-semibold mb-1">Suporte Técnico</h4>
+                      <p className="text-sm">Suporte prioritário incluído para garantir automações perfeitas.</p>
                     </div>
                   </div>
                   
-                  <div className="mt-6 text-center">
-                    <Button variant="outline" className="border-white text-white hover:bg-white/20">
-                      Solicitar Demonstração
+                  <div className="mt-4 text-center">
+                    <Button variant="outline" className="border-white text-white hover:bg-white/20 text-sm">
+                      Solicitar Demo
                     </Button>
                   </div>
                   
-                  <p className="mt-4 text-sm italic text-center text-white/70">Clique para voltar</p>
+                  <p className="mt-3 text-xs italic text-center text-white/70">Clique para voltar</p>
                 </div>
               </motion.div>
             </div>

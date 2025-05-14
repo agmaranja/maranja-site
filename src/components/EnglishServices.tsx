@@ -213,7 +213,7 @@ const EnglishServices = () => {
                   </p>
                 </div>
 
-                {/* Back of Card */}
+                {/* Back of Card - Simplified content to fit */}
                 <div 
                   className={`absolute inset-0 backface-hidden ${
                     flippedCardId === 10 ? "opacity-100" : "opacity-0"
@@ -223,32 +223,32 @@ const EnglishServices = () => {
                     transform: "rotateY(180deg)"
                   }}
                 >
-                  <h3 className="text-2xl font-bold mb-5 text-center">Benefits of On-Demand Automation</h3>
+                  <h3 className="text-xl font-bold mb-4 text-center">Benefits of On-Demand Automation</h3>
                   
-                  <div className="space-y-5">
+                  <div className="space-y-3">
                     <div>
-                      <h4 className="text-xl font-semibold mb-2">Maximum Flexibility</h4>
-                      <p>Our automation cards work like prepaid credits. Use them for appointment reminders, patient follow-ups, or administrative tasks.</p>
+                      <h4 className="text-lg font-semibold mb-1">Flexibility</h4>
+                      <p className="text-sm">Use prepaid credits for appointment reminders, patient follow-ups, or administrative tasks.</p>
                     </div>
                     
                     <div>
-                      <h4 className="text-xl font-semibold mb-2">Cost-Effective Solution</h4>
-                      <p>Instead of multiple systems with monthly fees, our model lets you pay only for the automation services you actually use.</p>
+                      <h4 className="text-lg font-semibold mb-1">Cost-Effective</h4>
+                      <p className="text-sm">Pay only for the services you actually use, without fixed monthly fees.</p>
                     </div>
                     
                     <div>
-                      <h4 className="text-xl font-semibold mb-2">Technical Support Included</h4>
-                      <p>Each automation card includes priority technical support to ensure your workflows run smoothly.</p>
+                      <h4 className="text-lg font-semibold mb-1">Technical Support</h4>
+                      <p className="text-sm">Priority support included to ensure your workflows run smoothly.</p>
                     </div>
                   </div>
                   
-                  <div className="mt-6 text-center">
-                    <Button variant="outline" className="border-white text-white hover:bg-white/20">
+                  <div className="mt-4 text-center">
+                    <Button variant="outline" className="border-white text-white hover:bg-white/20 text-sm">
                       Request a Demo
                     </Button>
                   </div>
                   
-                  <p className="mt-4 text-sm italic text-center text-white/70">Click to go back</p>
+                  <p className="mt-3 text-xs italic text-center text-white/70">Click to go back</p>
                 </div>
               </motion.div>
             </div>

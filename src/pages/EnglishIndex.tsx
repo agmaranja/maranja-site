@@ -1,6 +1,5 @@
-
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import EnglishFooter from "@/components/EnglishFooter";
 import Leaf from "@/components/Leaf";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import EnglishServices from "@/components/EnglishServices";
@@ -216,7 +215,7 @@ const EnglishIndex = () => {
           </div>
         </section>
       </main>
-      <Footer />
+      <EnglishFooter />
       <WhatsAppButton />
     </div>
   );
