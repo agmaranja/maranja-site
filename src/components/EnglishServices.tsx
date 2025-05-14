@@ -157,9 +157,7 @@ const EnglishServices = () => {
                   <div className="flex flex-col md:flex-row items-center">
                     <div className="md:w-3/5 mb-6 md:mb-0 md:pr-8">
                       <h3 className="text-2xl md:text-3xl font-bold mb-4 text-maranja-darkblue">On-Demand Automation </h3>
-                      <p className="text-maranja-darkblue/80 mb-4">
-                        Our innovative automation card system allows you to request automation solutions on demand. Pay only for what you need, when you need it.
-                      </p>
+                      <p className="text-maranja-darkblue/80 mb-4">Our innovative automation Team allows you to request automation solutions on demand. Pay only for what you need, when you need it.</p>
                       <ul className="list-disc list-inside space-y-2 mb-6 text-maranja-darkblue/80">
                         <li>Flexible automation solutions</li>
                         <li>No long-term commitments</li>
