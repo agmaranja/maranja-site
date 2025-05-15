@@ -31,15 +31,15 @@ const LanguageSelector = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="flex items-center gap-2 px-2">
+        <Button variant="ghost" size="sm" className="flex items-center gap-1.5 px-2">
           {currentLanguage === "pt-BR" ? (
             <>
-              <div className="w-5 h-3 relative overflow-hidden rounded-sm">
+              <div className="w-4 h-2.5 relative overflow-hidden rounded-sm">
                 <div className="absolute inset-0 bg-green-500"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-3 h-3 bg-yellow-400 transform rotate-45 translate-y-0.5"></div>
-                  <div className="absolute w-2.5 h-2.5 bg-blue-700 rounded-full flex items-center justify-center">
-                    <div className="text-white text-[5px]">BR</div>
+                  <div className="w-2.5 h-2.5 bg-yellow-400 transform rotate-45 translate-y-0.5"></div>
+                  <div className="absolute w-2 h-2 bg-blue-700 rounded-full flex items-center justify-center">
+                    <div className="text-white text-[4px]">BR</div>
                   </div>
                 </div>
               </div>
@@ -47,12 +47,12 @@ const LanguageSelector = () => {
             </>
           ) : (
             <>
-              <div className="w-5 h-3 relative overflow-hidden rounded-sm">
+              <div className="w-4 h-2.5 relative overflow-hidden rounded-sm">
                 <div className="absolute inset-0 bg-blue-600"></div>
                 <div className="absolute inset-0">
                   {/* US Flag - White stars on blue rectangle */}
                   <div className="absolute top-0 left-0 w-[40%] h-[50%] bg-blue-800 flex items-center justify-center">
-                    <div className="text-white text-[3px] font-bold">★★</div>
+                    <div className="text-white text-[2px] font-bold">★★</div>
                   </div>
                   {/* US Flag - Red and white stripes */}
                   <div className="absolute top-0 left-0 w-full h-full flex flex-col">
@@ -74,24 +74,24 @@ const LanguageSelector = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => handleLanguageChange("pt-BR")} className="cursor-pointer">
-          <div className="w-5 h-3 relative overflow-hidden rounded-sm mr-2">
+          <div className="w-4 h-2.5 relative overflow-hidden rounded-sm mr-2">
             <div className="absolute inset-0 bg-green-500"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-3 h-3 bg-yellow-400 transform rotate-45 translate-y-0.5"></div>
-              <div className="absolute w-2.5 h-2.5 bg-blue-700 rounded-full flex items-center justify-center">
-                <div className="text-white text-[5px]">BR</div>
+              <div className="w-2.5 h-2.5 bg-yellow-400 transform rotate-45 translate-y-0.5"></div>
+              <div className="absolute w-2 h-2 bg-blue-700 rounded-full flex items-center justify-center">
+                <div className="text-white text-[4px]">BR</div>
               </div>
             </div>
           </div>
           Português
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => handleLanguageChange("en-US")} className="cursor-pointer">
-          <div className="w-5 h-3 relative overflow-hidden rounded-sm mr-2">
+          <div className="w-4 h-2.5 relative overflow-hidden rounded-sm mr-2">
             <div className="absolute inset-0 bg-blue-600"></div>
             <div className="absolute inset-0">
               {/* US Flag - White stars on blue rectangle */}
               <div className="absolute top-0 left-0 w-[40%] h-[50%] bg-blue-800 flex items-center justify-center">
-                <div className="text-white text-[3px] font-bold">★★</div>
+                <div className="text-white text-[2px] font-bold">★★</div>
               </div>
               {/* US Flag - Red and white stripes */}
               <div className="absolute top-0 left-0 w-full h-full flex flex-col">
