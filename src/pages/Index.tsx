@@ -1,7 +1,7 @@
 
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import ServicesWithShadow from "@/components/Services";
+import Services from "@/components/Services";
 import CallMeForm from "@/components/CallMeForm";
 import Footer from "@/components/Footer";
 import Leaf from "@/components/Leaf";
@@ -89,7 +89,7 @@ const Index = () => {
       <Header />
       <main className="relative z-10">
         <Hero />
-        <ServicesWithShadow />
+        <Services />
         <CallMeForm />
       </main>
       <Footer />

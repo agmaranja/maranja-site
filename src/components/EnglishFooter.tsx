@@ -9,7 +9,7 @@ const EnglishFooter = () => {
     <footer id="contato" className="bg-maranja-darkblue text-white py-16 md:py-20 relative">
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between pb-10 border-b border-white/20">
-          <div className="mb-10 md:mb-0 md:w-1/3">
+          <div className="mb-10 md:mb-0">
             <img src="/lovable-uploads/df2623b6-6fdc-4547-bd83-34b9b7cb6718.png" alt="Maranjá" className="h-16 mb-6 invert" />
             <p className="max-w-xs text-white/70 mb-8">
               Marketing and automation solutions for clinics looking to grow and optimize processes.
@@ -33,7 +33,7 @@ const EnglishFooter = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-2 gap-8 md:gap-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-10">
             <div>
               <h3 className="text-lg font-semibold mb-5">Services</h3>
               <ul className="space-y-3">

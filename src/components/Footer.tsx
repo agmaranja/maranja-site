@@ -1,15 +1,11 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <footer id="contato" className="bg-maranja-darkblue text-white py-16 md:py-20 relative">
+  return <footer id="contato" className="bg-maranja-darkblue text-white py-16 md:py-20 relative">
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between pb-10 border-b border-white/20">
-          <div className="mb-10 md:mb-0 md:w-1/3">
+          <div className="mb-10 md:mb-0">
             <img src="/lovable-uploads/df2623b6-6fdc-4547-bd83-34b9b7cb6718.png" alt="Maranjá" className="h-16 mb-6 invert" />
             <p className="max-w-xs text-white/70 mb-8">
               Soluções de marketing e automação para clínicas que desejam crescer e otimizar processos.
@@ -33,7 +29,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-2 gap-8 md:gap-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-10">
             <div>
               <h3 className="text-lg font-semibold mb-5">Serviços</h3>
               <ul className="space-y-3">
@@ -53,6 +49,8 @@ const Footer = () => {
                 <li><a href="#" className="text-white/70 hover:text-white">Blog</a></li>
               </ul>
             </div>
+            
+            
           </div>
         </div>
         
@@ -60,8 +58,6 @@ const Footer = () => {
           <p>&copy; {currentYear} Maranjá | Todos os direitos reservados</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

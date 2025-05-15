@@ -1,5 +1,3 @@
-
-import React from "react";
 import Header from "@/components/Header";
 import EnglishFooter from "@/components/EnglishFooter";
 import Leaf from "@/components/Leaf";
@@ -7,48 +5,23 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import EnglishServices from "@/components/EnglishServices";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { useForm } from "react-hook-form";
 import { useToast } from "@/components/ui/use-toast";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { supabase } from "@/integrations/supabase/client";
 
 const EnglishIndex = () => {
   const { toast } = useToast();
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
-  const [loading, setLoading] = React.useState(false);
 
-  const onSubmit = async (data: any) => {
-    setLoading(true);
-    try {
-      // Call the Edge Function to send the email
-      const { error } = await supabase.functions.invoke('send-contact-form', {
-        body: {
-          nome: data.name,
-          telefone: data.phone,
-          email: data.email || '',
-          mensagem: data.message
-        }
-      });
-
-      if (error) throw new Error(error.message);
-
-      toast({
-        title: "Form submitted",
-        description: "We'll contact you soon!",
-      });
-      reset();
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      toast({
-        title: "Error submitting form",
-        description: "There was an error submitting your form. Please try again.",
-        variant: "destructive"
-      });
-    } finally {
-      setLoading(false);
-    }
+  const onSubmit = (data: any) => {
+    // For demonstration, just show a success toast
+    toast({
+      title: "Form submitted",
+      description: "We'll contact you soon!",
+    });
+    reset();
   };
 
   return (
@@ -233,9 +206,8 @@ const EnglishIndex = () => {
                   <Button 
                     type="submit" 
                     className="w-full bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white font-semibold py-3"
-                    disabled={loading}
                   >
-                    {loading ? "Sending..." : "Request Contact"}
+                    Request Contact
                   </Button>
                 </div>
               </form>

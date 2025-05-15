@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,10 +5,10 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Phone, Mail } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-
 const CallMeForm = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
@@ -17,57 +16,38 @@ const CallMeForm = () => {
     email: "",
     mensagem: ""
   });
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const {
+      name,
+      value
+    } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    try {
-      // Call the Edge Function to send the email
-      const { data, error } = await supabase.functions.invoke('send-contact-form', {
-        body: formData
-      });
-
-      if (error) {
-        throw new Error(error.message);
-      }
-
-      // Success message
+    // Simulando envio do formulário
+    setTimeout(() => {
+      setLoading(false);
       toast({
         title: "Formulário enviado!",
         description: "Entraremos em contato em breve.",
         duration: 5000
       });
 
-      // Reset form
+      // Limpar formulário
       setFormData({
         nome: "",
         telefone: "",
         email: "",
         mensagem: ""
       });
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      
-      toast({
-        title: "Erro ao enviar formulário",
-        description: "Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.",
-        variant: "destructive",
-        duration: 5000
-      });
-    } finally {
-      setLoading(false);
-    }
+    }, 1000);
   };
-
   return <section id="ligue-para-mim" className="py-20 md:py-28 bg-gradient-to-b from-maranja-beige to-maranja-cream relative">
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-3xl mx-auto">
@@ -134,5 +114,4 @@ const CallMeForm = () => {
       </div>
     </section>;
 };
-
 export default CallMeForm;
