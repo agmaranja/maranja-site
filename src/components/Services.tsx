@@ -144,7 +144,7 @@ const Services = () => {
                 <div 
                   className={`absolute w-full h-full backface-hidden ${
                     flippedCardId === service.id ? "opacity-0" : "opacity-100"
-                  } transition-opacity duration-300 rounded-lg border border-maranja-darkblue/10 bg-white/90 backdrop-blur-sm hover:shadow-md`}
+                  } transition-opacity duration-300 rounded-lg border border-maranja-darkblue/10 bg-white/90 backdrop-blur-sm hover:shadow-md shadow-sm`}
                   style={{ backfaceVisibility: "hidden" }}
                 >
                   <Card className="h-full border-none shadow-none bg-transparent flex flex-col items-center justify-center text-center p-6">
@@ -162,7 +162,7 @@ const Services = () => {
                 <div 
                   className={`absolute w-full h-full backface-hidden ${
                     flippedCardId === service.id ? "opacity-100" : "opacity-0"
-                  } transition-opacity duration-300 bg-maranja-darkblue text-white rounded-lg border border-maranja-darkblue/10 flex flex-col justify-center p-8`}
+                  } transition-opacity duration-300 bg-maranja-darkblue text-white rounded-lg border border-maranja-darkblue/10 flex flex-col justify-center p-8 shadow-md`}
                   style={{ 
                     backfaceVisibility: "hidden",
                     transform: "rotateY(180deg)",
@@ -217,11 +217,11 @@ const Services = () => {
                         <li>Personalizado para sua clínica</li>
                       </ul>
                       <Button className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white">
-                        Saiba Mais
+                        <span className="text-maranja-beige">Solicitar Demo</span>
                       </Button>
                     </div>
                     <div className="md:w-2/5">
-                      <img src="/lovable-uploads/59dfa3de-8a05-4a4b-8f09-64c53bae359a.png" alt="Automation Card" className="w-full h-auto rounded-md shadow-md" />
+                      <img src="/lovable-uploads/59dfa3de-8a05-4a4b-8f09-64c53bae359a.png" alt="Automation Card" className="w-full h-auto rounded-md shadow-md" style={{ backgroundColor: "#f5f0e5" }} />
                     </div>
                   </div>
                   <p className="mt-4 text-sm text-center text-maranja-darkblue/60 font-medium">
@@ -230,7 +230,7 @@ const Services = () => {
                 </div>
 
                 {/* Back of Card - Simplified content to fit */}
-                <div className={`absolute inset-0 backface-hidden ${flippedCardId === 10 ? "opacity-100" : "opacity-0"} transition-opacity duration-300 bg-maranja-darkblue text-white rounded-lg p-6 md:p-8`} style={{
+                <div className={`absolute inset-0 backface-hidden ${flippedCardId === 10 ? "opacity-100" : "opacity-0"} transition-opacity duration-300 bg-maranja-darkblue text-white rounded-lg p-6 md:p-8 shadow-md`} style={{
                   backfaceVisibility: "hidden",
                   transform: "rotateY(180deg)"
                 }}>

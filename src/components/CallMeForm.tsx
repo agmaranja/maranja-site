@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -5,10 +6,10 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Phone, Mail } from "lucide-react";
+import { createClient } from "@supabase/supabase-js";
+
 const CallMeForm = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
@@ -16,38 +17,62 @@ const CallMeForm = () => {
     email: "",
     mensagem: ""
   });
+
+  // Initialize Supabase client
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+  const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const {
-      name,
-      value
-    } = e.target;
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulando envio do formulário
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      // Call the Edge Function to send the email
+      const { data, error } = await supabase.functions.invoke('send-contact-form', {
+        body: formData
+      });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      // Success message
       toast({
         title: "Formulário enviado!",
         description: "Entraremos em contato em breve.",
         duration: 5000
       });
 
-      // Limpar formulário
+      // Reset form
       setFormData({
         nome: "",
         telefone: "",
         email: "",
         mensagem: ""
       });
-    }, 1000);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      
+      toast({
+        title: "Erro ao enviar formulário",
+        description: "Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.",
+        variant: "destructive",
+        duration: 5000
+      });
+    } finally {
+      setLoading(false);
+    }
   };
+
   return <section id="ligue-para-mim" className="py-20 md:py-28 bg-gradient-to-b from-maranja-beige to-maranja-cream relative">
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-3xl mx-auto">
@@ -114,4 +139,5 @@ const CallMeForm = () => {
       </div>
     </section>;
 };
+
 export default CallMeForm;
