@@ -1,3 +1,5 @@
+
+import React from "react";
 import Header from "@/components/Header";
 import EnglishFooter from "@/components/EnglishFooter";
 import Leaf from "@/components/Leaf";
